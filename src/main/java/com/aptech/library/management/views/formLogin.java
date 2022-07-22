@@ -60,12 +60,12 @@ public class formLogin extends javax.swing.JFrame {
     setBackground(new java.awt.Color(255, 255, 255));
 
     panelLabel.setBackground(new java.awt.Color(255, 255, 255));
-    panelLabel.setFont(new java.awt.Font("Google Sans Medium", 1, 24)); // NOI18N
+    panelLabel.setFont(new java.awt.Font("Segoe UI Medium", 1, 24)); // NOI18N
     panelLabel.setForeground(new java.awt.Color(50, 49, 48));
     panelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     panelLabel.setText("Login");
 
-    usernameField.setFont(new java.awt.Font("Google Sans", 0, 14)); // NOI18N
+    usernameField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
     usernameField.setForeground(new java.awt.Color(50, 49, 48));
     usernameField.setToolTipText("Enter username");
     usernameField.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +79,7 @@ public class formLogin extends javax.swing.JFrame {
       }
     });
 
-    passwordField.setFont(new java.awt.Font("Google Sans", 0, 14)); // NOI18N
+    passwordField.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
     passwordField.setForeground(new java.awt.Color(50, 49, 48));
     passwordField.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,16 +87,16 @@ public class formLogin extends javax.swing.JFrame {
       }
     });
 
-    usernameLabel.setFont(new java.awt.Font("Google Sans", 0, 14)); // NOI18N
+    usernameLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
     usernameLabel.setForeground(new java.awt.Color(50, 49, 48));
     usernameLabel.setText("Username");
 
-    passwordLabel.setFont(new java.awt.Font("Google Sans", 0, 14)); // NOI18N
+    passwordLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
     passwordLabel.setForeground(new java.awt.Color(50, 49, 48));
     passwordLabel.setText("Password");
 
     loginBtn.setBackground(new java.awt.Color(0, 120, 212));
-    loginBtn.setFont(new java.awt.Font("Google Sans", 0, 14)); // NOI18N
+    loginBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
     loginBtn.setForeground(new java.awt.Color(255, 255, 255));
     loginBtn.setText("Login");
     loginBtn.setBorder(null);
@@ -108,7 +108,7 @@ public class formLogin extends javax.swing.JFrame {
       }
     });
 
-    resetBtn.setFont(new java.awt.Font("Google Sans", 0, 14)); // NOI18N
+    resetBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
     resetBtn.setForeground(new java.awt.Color(50, 49, 48));
     resetBtn.setText("Signup");
     resetBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(50, 49, 48)));

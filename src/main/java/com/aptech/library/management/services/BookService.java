@@ -1,6 +1,7 @@
 package com.aptech.library.management.services;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class BookService {
         String bookAuthor = resultSet.getString("author");
         String bookCategory = resultSet.getString("category");
         String bookPublisher = resultSet.getString("publisher");
-        int bookPublishedYear = resultSet.getInt("published_year");
+        Date bookPublishedYear = resultSet.getDate("published_year");
         int quantity = resultSet.getInt("quantity");
         float price = resultSet.getFloat("price");
         float rent = resultSet.getFloat("rent");
@@ -75,7 +76,7 @@ public class BookService {
       statement.setString(2, book.getAuthor());
       statement.setString(3, book.getCategory());
       statement.setString(4, book.getPublisher());
-      statement.setInt(5, book.getPublishedYear());
+      statement.setDate(5, book.getPublishedYear());
       statement.setInt(6, book.getQuantity());
       statement.setFloat(7, book.getPrice());
       statement.setFloat(8, book.getRent());
