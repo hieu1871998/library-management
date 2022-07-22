@@ -1,9 +1,21 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_book`(IN keyword varchar(100))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_books`(in bookName varchar(100), in author varchar(100), in category varchar(100), in publisher varchar(100), in published_year varchar(100))
 BEGIN
-	set @sql_select = "select * from book WHERE 1=1";
-    if `keyword` != "" then
-		set @sql_select = concat(@sql_select, " and id like '%", keyword, "%' or name like '%", keyword, "%' or author like '%", keyword, "%' or category like '%", keyword, "%'");
+	set @sql_select = "select * from book where 1=1";
+    if `bookName` != "" then
+		set @sql_select = concat(@sql_select, " and name like '%", bookName, "%'");
+    end if;
+    if `author` != "" then
+		set @sql_select = concat(@sql_select, " and author like '%", author, "%'");
 	end if;
+    if `category` != "" then
+		set @sql_select = concat(@sql_select, " and category like '%", category, "%'");
+    end if;
+    if `publisher` != "" then
+		set @sql_select = concat(@sql_select, " and publisher like '%", publisher, "%'");
+	end if;
+    if `published_year` != "" then
+		set @sql_select = concat(@sql_select, " and published_year = ", published_year);
+    end if;
     set @sql_select = concat(@sql_select, " order by id desc");
     prepare query_data from @sql_select;
     execute query_data;

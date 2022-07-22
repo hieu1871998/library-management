@@ -55,14 +55,14 @@ CREATE TABLE `book` (
   `author` varchar(100) NOT NULL,
   `category` varchar(100) NOT NULL,
   `publisher` varchar(100) NOT NULL,
-  `published_year` int NOT NULL,
+  `published_year` date NOT NULL,
   `cover` varbinary(100) DEFAULT NULL,
   `quantity` int NOT NULL,
   `price` float NOT NULL,
   `rent` float NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (1,'Eragon','Christopher Paolini','0','0',2003,NULL,18,187000,18000),(2,'Eragon','Christopher Paolini','0','0',2003,NULL,18,187000,18000),(3,'Eragon','Christopher Paolini','0','0',2003,NULL,18,187000,18000),(4,'New Book','An Author','A Category','Random Publisher',2022,NULL,7,100000,10000);
+INSERT INTO `book` VALUES (6,'Eragon','Christopher Paolini','Fantasy','Self Published','1970-01-01',NULL,18,187000,18000),(7,'Brisingr','Christopher Paolini','Fantasy','Self Published','1970-01-01',NULL,7,210000,20000),(8,'Brisingr','Christopher Paolini','Fantasy','Self Published','1970-01-01',NULL,7,210000,20000);
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -299,4 +299,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-22  8:37:09
+-- Dump completed on 2022-07-22 18:02:01
