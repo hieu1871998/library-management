@@ -101,17 +101,18 @@ public class BookService {
 
     try {
       connection.setAutoCommit(false);
-      String slqString = "update book set name = ?, author = ?, category = ?, publisher = ?, published_year = ?, quantity = ?, price = ?, rent = ?";
+      String slqString = "update book set name = ?, author = ?, category = ?, publisher = ?, published_year = ?, quantity = ?, price = ?, rent = ? where id = ?";
       PreparedStatement statement = connection.prepareStatement(slqString);
 
       statement.setString(1, book.getName());
-      statement.setString(1, book.getAuthor());
-      statement.setString(1, book.getCategory());
-      statement.setString(1, book.getPublisher());
-      statement.setDate(1, book.getPublishedYear());
-      statement.setInt(1, book.getQuantity());
-      statement.setFloat(1, book.getPrice());
-      statement.setFloat(1, book.getRent());
+      statement.setString(2, book.getAuthor());
+      statement.setString(3, book.getCategory());
+      statement.setString(4, book.getPublisher());
+      statement.setDate(5, book.getPublishedYear());
+      statement.setInt(6, book.getQuantity());
+      statement.setFloat(7, book.getPrice());
+      statement.setFloat(8, book.getRent());
+      statement.setLong(9, book.getId());
 
       int result = statement.executeUpdate();
       connection.commit();
@@ -124,6 +125,29 @@ public class BookService {
         exception2.printStackTrace();
       }
       exception.printStackTrace();
+    } finally {
+      DbUtils.getInstance().closeConnection(connection);
+    }
+
+    return output;
+  }
+
+  public boolean deleteBook(Long bookId) {
+    Connection connection = DbUtils.getInstance().getConnection();
+    boolean output = false;
+
+    try {
+      String sqlString = "delete from book where id = ?";
+      PreparedStatement statement = connection.prepareStatement(sqlString);
+
+      statement.setLong(1, bookId);
+
+      int result = statement.executeUpdate();
+
+      output = result == 1 ? true : false;
+      statement.close();
+    } catch (Exception e) {
+      e.printStackTrace();
     } finally {
       DbUtils.getInstance().closeConnection(connection);
     }
