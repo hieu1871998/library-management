@@ -94,4 +94,40 @@ public class BookService {
 
     return output;
   }
+
+  public boolean updateBook(Book book) {
+    boolean output = false;
+    Connection connection = DbUtils.getInstance().getConnection();
+
+    try {
+      connection.setAutoCommit(false);
+      String slqString = "update book set name = ?, author = ?, category = ?, publisher = ?, published_year = ?, quantity = ?, price = ?, rent = ?";
+      PreparedStatement statement = connection.prepareStatement(slqString);
+
+      statement.setString(1, book.getName());
+      statement.setString(1, book.getAuthor());
+      statement.setString(1, book.getCategory());
+      statement.setString(1, book.getPublisher());
+      statement.setDate(1, book.getPublishedYear());
+      statement.setInt(1, book.getQuantity());
+      statement.setFloat(1, book.getPrice());
+      statement.setFloat(1, book.getRent());
+
+      int result = statement.executeUpdate();
+      connection.commit();
+      output = result == 1 ? true : false;
+      statement.close();
+    } catch (Exception exception) {
+      try {
+        connection.rollback();
+      } catch (Exception exception2) {
+        exception2.printStackTrace();
+      }
+      exception.printStackTrace();
+    } finally {
+      DbUtils.getInstance().closeConnection(connection);
+    }
+
+    return output;
+  }
 }

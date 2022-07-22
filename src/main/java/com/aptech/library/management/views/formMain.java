@@ -721,26 +721,23 @@ public class formMain extends javax.swing.JFrame {
     }
   }
 
-  private void updateBook(Book book) {
-    boolean output = false;
-    Connection connection = DbUtils.getInstance().getConnection();
-
+  private void updateBook() {
     try {
-      connection.setAutoCommit(false);
-      String slqString = "update book set name = ?, author = ?, category = ?, publisher = ?, published_year = ?, quantity = ?, price = ?, rent = ?";
-      PreparedStatement statement = connection.prepareStatement(slqString);
+      if (this.book == null) {
+        JOptionPane.showMessageDialog(getRootPane(), "Please select a book.");
+        return;
+      }
 
-      statement.setString(1, book.getName());
-      statement.setString(1, book.getAuthor());
-      statement.setString(1, book.getCategory());
-      statement.setString(1, book.getPublisher());
-      statement.setDate(1, book.getPublishedYear());
-      statement.setInt(1, book.getQuantity());
-      statement.setFloat(1, book.getPrice());
-      statement.setFloat(1, book.getRent());
+      this.book.setName(nameField.getText());
+      this.book.setAuthor(authorField.getText());
+      this.book.setCategory(categoryField.getText());
+      this.book.setPublisher(publisherField.getText());
+      this.book.setPublishedYear(Date.valueOf(publishedField.getText()));
+      this.book.setQuantity(Integer.parseInt(quantityField.getText()));
+      this.book.setPrice(Float.parseFloat(priceField.getText()));
+      this.book.setRent(Float.parseFloat(rentField.getText()));
+
     } catch (Exception exception) {
-
-    } finally {
 
     }
   }
