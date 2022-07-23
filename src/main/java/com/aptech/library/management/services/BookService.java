@@ -47,10 +47,12 @@ public class BookService {
         String bookCategory = resultSet.getString("category");
         String bookPublisher = resultSet.getString("publisher");
         Date bookPublishedYear = resultSet.getDate("published_year");
+        String cover = resultSet.getString("cover");
         int quantity = resultSet.getInt("quantity");
         float price = resultSet.getFloat("price");
         float rent = resultSet.getFloat("rent");
-        Book book = new Book(id, bookName, bookAuthor, bookCategory, bookPublisher, bookPublishedYear, quantity, price,
+        Book book = new Book(id, bookName, bookAuthor, bookCategory, bookPublisher, bookPublishedYear, cover, quantity,
+            price,
             rent);
 
         books.add(book);
@@ -69,7 +71,7 @@ public class BookService {
 
     try {
       connection.setAutoCommit(false);
-      String sqlString = "INSERT INTO book (name, author, category, publisher, published_year, quantity, price, rent) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+      String sqlString = "INSERT INTO book (name, author, category, publisher, published_year, cover, quantity, price, rent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
       PreparedStatement statement = connection.prepareStatement(sqlString);
       statement.setString(1, book.getName());
@@ -77,9 +79,10 @@ public class BookService {
       statement.setString(3, book.getCategory());
       statement.setString(4, book.getPublisher());
       statement.setDate(5, book.getPublishedYear());
-      statement.setInt(6, book.getQuantity());
-      statement.setFloat(7, book.getPrice());
-      statement.setFloat(8, book.getRent());
+      statement.setString(6, book.getCover());
+      statement.setInt(7, book.getQuantity());
+      statement.setFloat(8, book.getPrice());
+      statement.setFloat(9, book.getRent());
 
       int result = statement.executeUpdate();
       connection.commit();
@@ -101,7 +104,7 @@ public class BookService {
 
     try {
       connection.setAutoCommit(false);
-      String slqString = "update book set name = ?, author = ?, category = ?, publisher = ?, published_year = ?, quantity = ?, price = ?, rent = ? where id = ?";
+      String slqString = "update book set name = ?, author = ?, category = ?, publisher = ?, published_year = ?, cover = ?, quantity = ?, price = ?, rent = ? where id = ?";
       PreparedStatement statement = connection.prepareStatement(slqString);
 
       statement.setString(1, book.getName());
@@ -109,10 +112,11 @@ public class BookService {
       statement.setString(3, book.getCategory());
       statement.setString(4, book.getPublisher());
       statement.setDate(5, book.getPublishedYear());
-      statement.setInt(6, book.getQuantity());
-      statement.setFloat(7, book.getPrice());
-      statement.setFloat(8, book.getRent());
-      statement.setLong(9, book.getId());
+      statement.setString(6, book.getCover());
+      statement.setInt(7, book.getQuantity());
+      statement.setFloat(8, book.getPrice());
+      statement.setFloat(9, book.getRent());
+      statement.setLong(10, book.getId());
 
       int result = statement.executeUpdate();
       connection.commit();
@@ -148,6 +152,32 @@ public class BookService {
       statement.close();
     } catch (Exception e) {
       e.printStackTrace();
+    } finally {
+      DbUtils.getInstance().closeConnection(connection);
+    }
+
+    return output;
+  }
+
+  public boolean addBookCover(Book book) {
+    Connection connection = DbUtils.getInstance().getConnection();
+    boolean output = false;
+
+    try {
+      connection.setAutoCommit(false);
+      String sqlString = "update book set cover = ? where id = ?";
+      PreparedStatement statement = connection.prepareStatement(sqlString);
+
+      statement.setString(1, book.getCover());
+      statement.setLong(2, book.getId());
+
+      int result = statement.executeUpdate();
+      connection.commit();
+      output = result == 1 ? true : false;
+      statement.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+      output = false;
     } finally {
       DbUtils.getInstance().closeConnection(connection);
     }

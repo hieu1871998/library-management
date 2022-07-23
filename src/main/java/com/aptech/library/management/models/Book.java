@@ -9,11 +9,13 @@ public class Book {
   private String category;
   private String publisher;
   private Date publishedYear;
+  private String cover;
   private int quantity;
   private float price;
   private float rent;
 
-  public Book(long id, String name, String author, String category, String publisher, Date publishedYear, int quantity,
+  public Book(long id, String name, String author, String category, String publisher, Date publishedYear, String cover,
+      int quantity,
       float price, float rent) {
     super();
     this.id = id;
@@ -22,6 +24,7 @@ public class Book {
     this.category = category;
     this.publisher = publisher;
     this.publishedYear = publishedYear;
+    this.cover = cover;
     this.quantity = quantity;
     this.price = price;
     this.rent = rent;
@@ -77,6 +80,14 @@ public class Book {
 
   public int getQuantity() {
     return this.quantity;
+  }
+
+  public String getCover() {
+    return this.cover;
+  }
+
+  public void setCover(String cover) {
+    this.cover = cover;
   }
 
   public void setQuantity(int quantity) {
