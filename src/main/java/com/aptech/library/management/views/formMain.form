@@ -90,45 +90,56 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="bookListPane" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="filterPanelLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="filterNameFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="filterNameField" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Component id="filterNameFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="filterNameField" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="filterAuthorFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="filterAuthorField" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="filterPublisherField" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                                  <Component id="filterPublisherFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="filterCategoryFieldLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="filterCategoryCombobox" min="-2" pref="144" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="filterYearFieldLabel" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="filterYearField" min="-2" pref="144" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="filterAuthorFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="filterAuthorField" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="filterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <EmptySpace pref="62" max="32767" attributes="0"/>
+                                      <Component id="importBtn" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="filterCategoryFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="filterCategoryField" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="filterPublisherFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="filterPublisherField" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="filterYearFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="filterYearField" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
-                                      </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="filterPanelLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="refreshBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="bookListPane" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="bookDetailPanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -138,34 +149,36 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="filterAuthorFieldLabel" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="filterPublisherFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="filterCategoryFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="filterYearFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="filterAuthorField" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="filterAuthorField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="filterPublisherField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="filterCategoryCombobox" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="filterYearField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
+                          <Component id="filterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="filterPanelLabel" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="filterPanelLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="refreshBtn" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="filterNameFieldLabel" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="filterNameFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="filterAuthorFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="filterNameField" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="filterCategoryFieldLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="filterCategoryField" min="-2" pref="28" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="filterPublisherFieldLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="filterPublisherField" min="-2" pref="28" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="filterYearFieldLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="filterYearField" min="-2" pref="28" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="importBtn" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Component id="bookListPane" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -220,16 +233,24 @@
                 <Property name="text" type="java.lang.String" value="Author"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="filterCategoryField">
+            <Component class="javax.swing.JComboBox" name="filterCategoryCombobox">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="30" green="31" red="32" type="rgb"/>
+                </Property>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(Category.names())" type="code"/>
+                </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filterCategoryFieldActionPerformed"/>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="filterCategoryFieldKeyPressed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filterCategoryComboboxActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="filterCategoryFieldLabel">
               <Properties>
@@ -274,7 +295,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Published date"/>
+                <Property name="text" type="java.lang.String" value="Published year"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="bookListPane">
@@ -381,28 +402,30 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="mngPaneLabel" max="32767" attributes="0"/>
+                              <Component id="mngPaneLabel" min="-2" pref="472" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="addBtn" alignment="0" pref="230" max="32767" attributes="0"/>
-                                      <Component id="idField" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="nameField" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="authorFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="nameFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="categoryFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="publisherFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="publishedFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="quantityFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="priceFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rentFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="authorField" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="categoryField" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="publisherField" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="publishedField" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="quantityField" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="priceField" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="idFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rentField" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="addBtn" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="idField" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="authorFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="nameFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="categoryFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="publisherFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="publishedFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="quantityFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="priceFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rentFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="authorField" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                          <Component id="publisherField" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                          <Component id="publishedField" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                          <Component id="quantityField" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="priceField" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="idFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rentField" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="nameField" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="categoryCombobox" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -418,22 +441,26 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="previewCoverBtn" min="-2" pref="28" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="coverFileFieldLabel" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
-                                                  <Component id="urlFieldLabel" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="urlFieldLabel" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="coverContainer" alignment="0" max="-2" attributes="0"/>
+                                                  </Group>
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
                                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                  <Component id="delBtn" min="-2" pref="230" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="delBtn" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
+                                                      <Component id="clearBtn" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
-                                              <Component id="clearBtn" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="coverContainer" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
@@ -450,7 +477,7 @@
                           <Component id="mngPaneLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                           <Component id="idFieldLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="idField" min="-2" pref="28" max="-2" attributes="0"/>
@@ -465,7 +492,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="categoryFieldLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="categoryField" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="categoryCombobox" min="-2" pref="28" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="publisherFieldLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -475,7 +502,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="publishedField" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="coverContainer" max="32767" attributes="0"/>
+                              <Component id="coverContainer" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -487,16 +514,16 @@
                               <Group type="102" attributes="0">
                                   <Component id="urlFieldLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="coverUrlField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="previewCoverBtn" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="coverUrlField" min="-2" pref="28" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="priceFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="coverFileFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -608,16 +635,6 @@
                       <Color blue="30" green="31" red="32" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Category"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="categoryField">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="30" green="31" red="32" type="rgb"/>
-                    </Property>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="publisherFieldLabel">
@@ -827,12 +844,12 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="coverPlaceholder" alignment="0" max="32767" attributes="0"/>
+                          <Component id="coverPlaceholder" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="coverPlaceholder" alignment="0" max="32767" attributes="0"/>
+                          <Component id="coverPlaceholder" alignment="0" min="-2" pref="328" max="-2" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                   </Layout>
@@ -867,7 +884,7 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="fileNameField">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="coverFileFieldLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -875,8 +892,77 @@
                     <Property name="text" type="java.lang.String" value="Cover file"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JComboBox" name="categoryCombobox">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(Category.names())" type="code"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="categoryComboboxActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="importBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d4" green="78" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Import CSV"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="importBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="refreshBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d4" green="78" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Refresh"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="refreshBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="filterClearBtn">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="clearIcon" type="code"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Clear filters"/>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filterClearBtnActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="slipsPane">
@@ -933,7 +1019,7 @@
                           </Group>
                           <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="340" max="32767" attributes="0"/>
+                      <EmptySpace pref="537" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -962,7 +1048,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="168" max="32767" attributes="0"/>
+                      <EmptySpace pref="170" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

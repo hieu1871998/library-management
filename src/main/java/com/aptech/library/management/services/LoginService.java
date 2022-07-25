@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.aptech.library.management.models.Admin;
-import com.aptech.library.management.utils.DbUtils;
+import com.aptech.library.management.utils.DatabaseUtil;
 
 public class LoginService {
   private Admin admin = null;
@@ -24,7 +24,7 @@ public class LoginService {
   }
 
   public void login(String username, String password) {
-    Connection connection = DbUtils.getInstance().getConnection();
+    Connection connection = DatabaseUtil.getInstance().getConnection();
 
     try {
       String sqlString = "SELECT * FROM admin WHERE UserName = ? AND Password = ?";
@@ -48,7 +48,7 @@ public class LoginService {
     } catch (Exception exception) {
       System.out.println("Error logging in: " + exception.getMessage());
     } finally {
-      DbUtils.getInstance().closeConnection(connection);
+      DatabaseUtil.getInstance().closeConnection(connection);
     }
   }
 

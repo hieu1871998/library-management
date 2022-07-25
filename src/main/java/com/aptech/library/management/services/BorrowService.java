@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.aptech.library.management.models.BorrowingSlip;
-import com.aptech.library.management.utils.DbUtils;
+import com.aptech.library.management.utils.DatabaseUtil;
 
 public class BorrowService {
   private static BorrowService instance;
@@ -25,7 +25,7 @@ public class BorrowService {
   public List<BorrowingSlip> getSlips(long bookId, int quantity, float rent, Date borrowDate, Date returnDate,
       boolean status) {
     List<BorrowingSlip> slips = new ArrayList<>();
-    Connection connection = DbUtils.getInstance().getConnection();
+    Connection connection = DatabaseUtil.getInstance().getConnection();
 
     try {
     } catch (Exception e) {

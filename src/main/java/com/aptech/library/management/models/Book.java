@@ -1,27 +1,29 @@
 package com.aptech.library.management.models;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Book {
   private long id;
   private String name;
   private String author;
-  private String category;
+  private int categoryId;
   private String publisher;
-  private Date publishedYear;
+  private LocalDate publishedYear;
   private String cover;
   private int quantity;
   private float price;
   private float rent;
 
-  public Book(long id, String name, String author, String category, String publisher, Date publishedYear, String cover,
+  public Book(long id, String name, String author, int categoryId, String publisher, LocalDate publishedYear,
+      String cover,
       int quantity,
       float price, float rent) {
     super();
     this.id = id;
     this.name = name;
     this.author = author;
-    this.category = category;
+    this.categoryId = categoryId;
     this.publisher = publisher;
     this.publishedYear = publishedYear;
     this.cover = cover;
@@ -54,12 +56,12 @@ public class Book {
     this.author = author;
   }
 
-  public String getCategory() {
-    return this.category;
+  public int getCategory() {
+    return this.categoryId;
   }
 
-  public void setCategory(String category) {
-    this.category = category;
+  public void setCategory(int categoryId) {
+    this.categoryId = categoryId;
   }
 
   public String getPublisher() {
@@ -70,11 +72,11 @@ public class Book {
     this.publisher = publisher;
   }
 
-  public Date getPublishedYear() {
+  public LocalDate getPublishedYear() {
     return this.publishedYear;
   }
 
-  public void setPublishedYear(Date publishedYear) {
+  public void setPublishedYear(LocalDate publishedYear) {
     this.publishedYear = publishedYear;
   }
 
