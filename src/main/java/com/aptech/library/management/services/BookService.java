@@ -15,7 +15,6 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.temporal.ChronoField;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -31,7 +30,7 @@ import net.harawata.appdirs.AppDirsFactory;
 
 public class BookService {
   private static BookService instance;
-  private Logger logger = LogManager.getLogger(BookService.class);
+  private final static Logger LOGGER = LogManager.getLogger(BookService.class);
   private static final String APP_NAME = "LibraryManager";
   private static final AppDirs appDirs = AppDirsFactory.getInstance();
   private static final String userDataDir = appDirs.getUserDataDir(APP_NAME, null, null);
@@ -77,7 +76,7 @@ public class BookService {
         books.add(book);
       }
     } catch (Exception exception) {
-      logger.error(exception);
+      LOGGER.error(exception);
       exception.printStackTrace();
     }
 
@@ -109,9 +108,14 @@ public class BookService {
 
       statement.close();
     } catch (Exception exception) {
+      LOGGER.error("Error inserting " + book.getName(), exception);
       exception.printStackTrace();
     } finally {
       DatabaseUtil.getInstance().closeConnection(connection);
+
+      if (output) {
+        LOGGER.info("Inserted " + book.getName());
+      }
     }
 
     return output;
@@ -145,11 +149,17 @@ public class BookService {
       try {
         connection.rollback();
       } catch (Exception exception2) {
+        LOGGER.error("Error rolling back.", exception2);
         exception2.printStackTrace();
       }
+      LOGGER.error("Error updating " + book.getName(), exception);
       exception.printStackTrace();
     } finally {
       DatabaseUtil.getInstance().closeConnection(connection);
+    }
+
+    if (output) {
+      LOGGER.info("Updated " + book.getName());
     }
 
     return output;
@@ -170,9 +180,14 @@ public class BookService {
       output = result == 1 ? true : false;
       statement.close();
     } catch (Exception e) {
+      LOGGER.error("Error deleting book " + bookId, e);
       e.printStackTrace();
     } finally {
       DatabaseUtil.getInstance().closeConnection(connection);
+    }
+
+    if (output) {
+      LOGGER.info("Deleted " + bookId);
     }
 
     return output;
@@ -195,6 +210,7 @@ public class BookService {
       output = result == 1 ? true : false;
       statement.close();
     } catch (Exception e) {
+      LOGGER.error("Error adding book cover.", e);
       e.printStackTrace();
       output = false;
     } finally {
@@ -207,7 +223,7 @@ public class BookService {
   public int[] importFromCSV(File file) {
     int output[] = null;
     String filePath = file.getAbsolutePath();
-    int batchSize = 20;
+    // int batchSize = 20;
     Connection connection = DatabaseUtil.getInstance().getConnection();
     DateTimeFormatter formatter = new DateTimeFormatterBuilder().appendPattern("yyyy")
         .parseDefaulting((ChronoField.MONTH_OF_YEAR), 1).parseDefaulting(ChronoField.DAY_OF_MONTH, 1).toFormatter();
@@ -220,12 +236,13 @@ public class BookService {
       BufferedReader lineReader = new BufferedReader(new FileReader(filePath));
       String lineText = null;
 
-      int count = 0;
+      // int count = 0;
 
       lineReader.readLine();
 
       while ((lineText = lineReader.readLine()) != null) {
-        count++;
+        // count++;
+        LOGGER.info("Importing: " + lineText);
         String[] data = lineText.split(";");
         System.out.println(data);
         String name = data[1];
@@ -263,11 +280,14 @@ public class BookService {
       System.err.println(exception);
     } catch (SQLException exception) {
       exception.printStackTrace();
+      LOGGER.error("Error importing data.", exception);
 
       try {
         connection.rollback();
       } catch (SQLException sqlException) {
+        LOGGER.error("Error rolling back.", sqlException);
         sqlException.printStackTrace();
+
       }
     } finally {
       DatabaseUtil.getInstance().closeConnection(connection);
@@ -295,6 +315,7 @@ public class BookService {
 
       FileUtils.copyURLToFile(url, new File(filePath));
     } catch (IOException e) {
+      LOGGER.error("Error importing image " + fileName, e);
       e.printStackTrace();
     }
   }

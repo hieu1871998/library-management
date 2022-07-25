@@ -1,0 +1,34 @@
+id;name;author;category_id;publisher;published_year;quantity;price;rent;cover
+6;Eragon;Christopher Paolini;16;Alfred A. Knopf;26/08/2003;18;187000;18000;https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/Eragon_book_cover.png/200px-Eragon_book_cover.png
+9;Eldest;Christopher Paolini;16;Alfred A. Knopf;23/08/2005;8;210000;21000;https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/Eldest_book_cover.png/200px-Eldest_book_cover.png
+10;Brisingr;Christopher Paolini;16;Alfred A. Knopf;20/09/2008;12;318000;20000;https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Brisingr_book_cover.png/220px-Brisingr_book_cover.png
+11;Inheritance;Christopher Paolini;16;Alfred A. Knopf;08/11/2011;5;329000;30000;https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Inheritance2011.JPG/220px-Inheritance2011.JPG
+13;City of Bones;Cassandra Clare;16;Margaret K. McElderry;27/03/2007;21;202000;21200;https://upload.wikimedia.org/wikipedia/en/0/0f/City_of_Bones.jpg
+14;The Fork, the Witch, and the Worm;Christopher Paolini, Angela Paoplini;16;Alfred A. Knopf;31/12/2018;7;318000;30000;https://upload.wikimedia.org/wikipedia/en/7/78/Cover_of_The_Fork%2C_the_Witch%2C_and_the_Worm.jpg
+15;City of Ashes;Cassandra Clare;16;Margaret K. McElderry;25/03/2008;12;253000;24000;https://upload.wikimedia.org/wikipedia/en/4/49/City_of_Ashes.jpg
+16;City Of Glass;Cassandra Clare;16;Margaret K. McElderry;24/03/2009;10;249000;24000;https://upload.wikimedia.org/wikipedia/en/9/99/City_of_glass.jpg
+17;City of Fallen Angels;Cassandra Clare;16;Margaret K. McElderry;05/04/2011;13;231000;20000;https://upload.wikimedia.org/wikipedia/en/9/9f/Cassandra_Clare_City_of_Fallen_Angels_book_cover.jpg
+18;City of Lost Souls;Cassandra Clare;16;Margaret K. McElderry;08/05/2012;21;300000;30000;https://upload.wikimedia.org/wikipedia/en/b/bc/Cassandra_Clare_City_of_Lost_Souls_book_cover.jpg
+19;City of Heavenly Fire;Cassandra Clare;16;Margaret K. McElderry;27/03/2014;15;315000;31500;https://upload.wikimedia.org/wikipedia/en/1/12/Cassandra_Clare_City_of_Heavenly_Fire_book_cover.jpg
+20;Mass Effect Omnibus Vol 1;Mac Walters, John Jackson Miller;12;Dark Horse Books;29/11/2016;1;1172880;72000;https://images-na.ssl-images-amazon.com/images/I/71rCTJhFDhL.jpg
+21;Mass Effect Omnibus Volume 2;Mac Walters, Jeremy Barlow;12;Dark Horse Books;21/02/2017;1;1148210;74000;https://images-na.ssl-images-amazon.com/images/I/719hT7QXbsL.jpg
+22;The Theory Of Everything;Stephen Hawking;8;Jaico Publishing House;01/01/2006;4;441773;41000;https://images-na.ssl-images-amazon.com/images/I/61etgo8lzJL.jpg
+23;Brief Answers To The Big Questions;Stephen Hawking;8;John Murray Press;01/01/2020;6;302663;30000;https://images-na.ssl-images-amazon.com/images/I/81-aBZSCJWL.jpg
+24;The Great Gatsby: A Novel: Illustrated Edition;F. Scott Fitzgerald, Adam Simpson;13;Black Dog & Leventhal;05/01/2021;5;455000;40000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/the_great_gatsby_a_novel_illustrated_edition/2021_08_10_11_25_59_1-390x510.jpg
+25;Marvel Encyclopedia New Edition;Stan Lee, DK, Adam Bray;15;DK;18/07/2020;3;749000;49000;https://cdn0.fahasa.com/media/catalog/product/m/a/marvel_encyclopedia_new_edition_1_2020_06_24_14_30_11.jpg
+26;Out Of The Dark 2: Into The Light;Chris Kennedy, David Weber;15;St Martin's Press;12/01/2021;4;470000;30000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/out_of_the_dark_2_into_the_light/2021_08_02_13_41_25_1-390x510.jpg
+27;To Hold Up The Sky;Cixin Liu;4;Tor Books;15/10/2020;2;46;40;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/to_hold_up_the_sky/2021_08_02_10_06_10_1-390x510.jpg
+28;Star Trek: Picard: The Dark Veil;James Swallow;15;Simon & Schuster;01/05/2021;1;355000;55000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/star_trek_picard_the_dark_veil_volume_2/2021_08_02_11_00_36_1-390x510.jpg
+29;The Glass Hotel: A Novel;Emily St. John Mandel;13;Knopf;24/03/2020;2;382000;32000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/the_glass_hotel_a_novel/2021_08_02_11_06_09_1-390x510.jpg
+30;Star Wars: Target Vader;Marc Laming, Robbie Thompson;15;Marvel;11/02/2020;1;401000;41000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/star_wars_target_vader/2021_08_10_12_11_22_1-390x510.jpg
+31;Dark Water;Elizabeth Lowry;4;riverrun;01/01/2018;1;324000;32000;https://cdn0.fahasa.com/media/catalog/product/9/7/9781786485649_1.jpg
+32;Star Wars: Darth Vader Vol. 2: Shadows And Secrets;Kieron Gillen;12;Marvel;02/11/2020;2;324000;42000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/star_wars_darth_vader_vol_2_shadows_and_secrets/2021_08_10_12_16_19_1-390x510.png
+33;Against the Fall of Night (Golden Age Masterworks);Sir Arthur C. Clarke;15;Gateway;02/05/2019;3;324000;24000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/against_the_fall_of_night_golden_age_masterworks/2021_04_22_15_23_03_1-390x510.jpg
+34;A Golden Fury;Samantha Cohoe;4;Wednesday Books;13/10/2020;3;314000;31000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/a_golden_fury/2021_06_09_16_23_11_1-390x510.jpg
+35;To Sleep In A Sea Of Stars;Christopher Paolini;16;Tor Books;15/09/2020;2;306000;30500;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/to_sleep_in_a_sea_of_stars/2021_05_31_15_34_01_1-390x510.jpg
+36;Dawn Of X Vol. 3;Jonathan Hickman, Pepe Larraz, R.B. Silva;12;Marvel;11/03/2020;1;290000;30000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/dawn_of_x_vol_3/2021_10_08_08_51_10_1-390x510.jpg
+39;English Grammar in Use;Raymond Murphy;2;Cambridge University;24/12/2020;6;138000;15000;https://cdn0.fahasa.com/media/catalog/product/e/n/english_grammar_in_use_book_w_ans_1_2018_09_19_15_25_47.JPG
+340;Oxford Advanced Learner's Dictionary;Diana Lea, Jennifer Bradbery;1;Oxford University Press;01/01/2022;2;473100;45000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/oxford_advanced_learners_dictionary_paperback___10th_edition_with_1_years_access_to_both_premium_online_and_app/2022_07_02_09_44_15_1-390x510.jpg
+542;Social Media and You (Your Mind Matters);Honor Head, Roberta Terracchio;3;Hachette Children's Group;01/01/2021;3;278000;30000;https://cdn0.fahasa.com/media/flashmagazine/images/page_images/social_media_and_you_your_mind_matters/2020_10_08_11_07_56_1-390x510.jpg
+643;The Alchemist;Paulo Coelho;4;Harper Collins Publ. UK;01/01/2021;2;123000;23000;https://cdn0.fahasa.com/media/catalog/product/9/7/9780007155668.jpg
+644;The Da Vinci Code;Dan Brown;15;Penguin Books Ltd;01/01/2020;3;176000;36000;https://cdn0.fahasa.com/media/catalog/product/9/7/9780141372563.jpg

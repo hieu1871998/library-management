@@ -6,14 +6,42 @@ import java.sql.SQLException;
 
 public class DatabaseUtil {
   private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
-  private final static String DBURL = "jdbc:mysql://localhost:3306/library_management?useSSL=false";
-  private final static String USERNAME = "root";
-  private final static String PASSWORD = "Hieu 18/7/1998";
+  private String DbUrl = "jdbc:mysql://localhost:3306/library_management?useSSL=false";
+  private String username = "root";
+  private String password = "Hieu 18/7/1998";
   private static DatabaseUtil INSTANCE;
   private Connection connection;
 
   private DatabaseUtil() {
 
+  }
+
+  public String getDbUrl() {
+    return this.DbUrl;
+  }
+
+  public void setDbUrl(String DbUrl) {
+    this.DbUrl = DbUrl;
+  }
+
+  public String getUsername() {
+    return this.username;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
+
+  public String getPassword() {
+    return this.password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public void setConnection(Connection connection) {
+    this.connection = connection;
   }
 
   public static DatabaseUtil getInstance() {
@@ -27,7 +55,7 @@ public class DatabaseUtil {
   public Connection getConnection() {
     try {
       Class.forName(DRIVER);
-      connection = DriverManager.getConnection(DBURL, USERNAME, PASSWORD);
+      connection = DriverManager.getConnection(DbUrl, username, password);
     } catch (Exception exception) {
       exception.printStackTrace();
     }

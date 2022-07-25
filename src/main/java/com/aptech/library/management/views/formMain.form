@@ -14,8 +14,25 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="dbConfigMenuItem">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="30" green="31" red="32" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Database configuration"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dbConfigMenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="importCsvMenuItem">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="30" green="31" red="32" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Import data from CSV"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="importCsvMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -29,7 +46,7 @@
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1280, 768]"/>
+      <Dimension value="[1366, 768]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -115,12 +132,20 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="filterYearFieldLabel" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="filterYearField" min="-2" pref="144" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="filterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
-                                      <EmptySpace pref="62" max="32767" attributes="0"/>
-                                      <Component id="importBtn" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="refreshBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="filterYearField" min="-2" pref="144" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="filterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="importBtn" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -129,8 +154,6 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="filterPanelLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="refreshBtn" min="-2" pref="28" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="bookListPane" max="32767" attributes="0"/>
@@ -164,9 +187,9 @@
                           </Group>
                           <Component id="filterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="filterPanelLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="refreshBtn" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="refreshBtn" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="filterPanelLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -545,7 +568,7 @@
                               <Component id="addBtn" linkSize="1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               <Component id="delBtn" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="81" max="32767" attributes="0"/>
+                          <EmptySpace pref="99" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -985,70 +1008,87 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="slipsPaneLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="slipsPaneLabel" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="slipCustomerField" linkSize="2" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
-                                  <Component id="customerFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="filterStudentIdField" linkSize="2" min="-2" pref="144" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="studentIdFieldLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="studentNameFieldLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="filterStudentNameField" min="-2" pref="144" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="slipBookField" linkSize="2" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="slipBookFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipBookField" linkSize="2" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="slipBookFieldLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="slipQuantityField" linkSize="2" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="slipQuantityFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipBorrowDateField" linkSize="2" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="slipBorrowDateFieldLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="slipBorrowDateField" linkSize="2" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="slipBorrowDateFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipReturnDateField" linkSize="2" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="slipReturnDateFieldLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="slipReturnDateField" linkSize="2" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="slipReturnDateFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="slipStatusCombobox" linkSize="2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="slipFilterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="slipStatusComboboxLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="slipStatusCombobox" linkSize="2" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="slipScrollPane" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="537" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="slipDetailPane" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="slipsPaneLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="customerFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="slipBookFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="slipQuantityFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="slipBorrowDateFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="slipReturnDateFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="slipStatusComboboxLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="slipsPaneLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="studentIdFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipBookFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipReturnDateFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipStatusComboboxLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipBorrowDateFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="studentNameFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="filterStudentIdField" linkSize="3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="slipBookField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipBorrowDateField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipReturnDateField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipStatusCombobox" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="filterStudentNameField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="slipFilterClearBtn" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="slipScrollPane" pref="609" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="slipDetailPane" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="slipCustomerField" linkSize="3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="slipBookField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="slipQuantityField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="slipBorrowDateField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="slipReturnDateField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="slipStatusCombobox" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="170" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1062,15 +1102,15 @@
                 <Property name="text" type="java.lang.String" value="Borrowing slips management"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="customerFieldLabel">
+            <Component class="javax.swing.JLabel" name="studentIdFieldLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Customer"/>
+                <Property name="text" type="java.lang.String" value="Student ID"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="slipCustomerField">
+            <Component class="javax.swing.JTextField" name="filterStudentIdField">
             </Component>
             <Component class="javax.swing.JTextField" name="slipBookField">
             </Component>
@@ -1080,16 +1120,6 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Book"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="slipQuantityField">
-            </Component>
-            <Component class="javax.swing.JLabel" name="slipQuantityFieldLabel">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Quantity"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="slipBorrowDateField">
@@ -1114,13 +1144,8 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="slipStatusCombobox">
               <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                  </StringArray>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(SlipStatus.names())" type="code"/>
                 </Property>
               </Properties>
               <Events>
@@ -1138,18 +1163,18 @@
                 <Property name="text" type="java.lang.String" value="Status"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+            <Container class="javax.swing.JScrollPane" name="slipScrollPane">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="slipTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="8" rowCount="0">
-                        <Column editable="false" title="Id" type="java.lang.Long"/>
+                        <Column editable="false" title="ID" type="java.lang.Long"/>
                         <Column editable="false" title="Customer" type="java.lang.String"/>
                         <Column editable="false" title="Book" type="java.lang.String"/>
                         <Column editable="false" title="Quantity" type="java.lang.Integer"/>
@@ -1206,6 +1231,101 @@
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JTextField" name="filterStudentNameField">
+            </Component>
+            <Component class="javax.swing.JLabel" name="studentNameFieldLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Student name"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="slipFilterClearBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="30" green="31" red="32" type="rgb"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JPanel" name="slipDetailPane">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="slipDetailPaneLabel" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="slipIdField" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="slipIdFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="studentIdField" min="-2" pref="200" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="slipDetailPaneLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="slipIdFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="slipIdField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="studentIdField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="slipDetailPaneLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="18" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Add borrowing slip"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="slipIdFieldLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="ID"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="slipIdField">
+                </Component>
+                <Component class="javax.swing.JTextField" name="studentIdField">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Student ID"/>
                   </Properties>
                 </Component>
               </SubComponents>
