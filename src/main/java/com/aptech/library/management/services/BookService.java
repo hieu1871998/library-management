@@ -56,6 +56,8 @@ public class BookService {
       statement.setInt(3, categoryId);
       statement.setString(4, publisher);
       statement.setString(5, publishedYear);
+
+      LOGGER.info("Executing statement: " + statement);
       ResultSet resultSet = statement.executeQuery();
 
       while (resultSet.next()) {
@@ -83,13 +85,52 @@ public class BookService {
     return books;
   }
 
+  public Book getBook(long id) {
+    Book book = new Book();
+    Connection connection = DatabaseUtil.getInstance().getConnection();
+
+    try {
+      String sql = "select * from book where id = ?";
+      PreparedStatement statement = connection.prepareStatement(sql);
+
+      statement.setLong(1, id);
+
+      LOGGER.info("Executing statement: " + statement);
+
+      ResultSet resultSet = statement.executeQuery();
+
+      resultSet.next();
+      String bookName = resultSet.getString("name");
+      String bookAuthor = resultSet.getString("author");
+      int bookCategory = resultSet.getInt("category_id");
+      String bookPublisher = resultSet.getString("publisher");
+      LocalDate bookPublishedYear = resultSet.getDate("published_year").toLocalDate();
+      String cover = resultSet.getString("cover");
+      int quantity = resultSet.getInt("quantity");
+      float price = resultSet.getFloat("price");
+      float rent = resultSet.getFloat("rent");
+
+      book = new Book(id, bookName, bookAuthor, bookCategory, bookPublisher, bookPublishedYear, cover, quantity,
+          price,
+          rent);
+
+      statement.close();
+    } catch (Exception e) {
+      LOGGER.error("Error getting book.", e);
+    } finally {
+      DatabaseUtil.getInstance().closeConnection(connection);
+    }
+
+    return book;
+  }
+
   public boolean insertBook(Book book) {
     boolean output = false;
     Connection connection = DatabaseUtil.getInstance().getConnection();
 
     try {
       connection.setAutoCommit(false);
-      String sqlString = "INSERT INTO book (name, author, category_id, publisher, published_year, cover, quantity, price, rent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+      String sqlString = "insert into book (name, author, category_id, publisher, published_year, cover, quantity, price, rent) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
       PreparedStatement statement = connection.prepareStatement(sqlString);
       statement.setString(1, book.getName());
@@ -127,8 +168,8 @@ public class BookService {
 
     try {
       connection.setAutoCommit(false);
-      String slqString = "update book set name = ?, author = ?, category_id = ?, publisher = ?, published_year = ?, cover = ?, quantity = ?, price = ?, rent = ? where id = ?";
-      PreparedStatement statement = connection.prepareStatement(slqString);
+      String sql = "update book set name = ?, author = ?, category_id = ?, publisher = ?, published_year = ?, cover = ?, quantity = ?, price = ?, rent = ? where id = ?";
+      PreparedStatement statement = connection.prepareStatement(sql);
 
       statement.setString(1, book.getName());
       statement.setString(2, book.getAuthor());
@@ -325,5 +366,60 @@ public class BookService {
     String filePath = userDataDir + "\\" + fileName;
 
     return filePath;
+  }
+
+  public static long getBookId(String name) {
+    long id;
+    Connection connection = DatabaseUtil.getInstance().getConnection();
+
+    try {
+      String sql = "select id from book where name = ?";
+      PreparedStatement statement = connection.prepareStatement(sql);
+
+      statement.setString(1, name.trim());
+
+      LOGGER.info("Executing statement: " + statement);
+      ResultSet resultSet = statement.executeQuery();
+
+      resultSet.next();
+
+      id = resultSet.getLong("id");
+
+      statement.close();
+    } catch (Exception e) {
+      LOGGER.error("Error getting book ID.", e);
+      id = -1L;
+    } finally {
+      DatabaseUtil.getInstance().closeConnection(connection);
+    }
+
+    return id;
+  }
+
+  public static float getBookRent(String name) {
+    float rent = 0;
+    Connection connection = DatabaseUtil.getInstance().getConnection();
+
+    try {
+      String sql = "select rent from book where name = ?";
+      PreparedStatement statement = connection.prepareStatement(sql);
+
+      statement.setString(1, name);
+
+      LOGGER.info("Executing statement: " + statement);
+      ResultSet resultSet = statement.executeQuery();
+
+      resultSet.next();
+
+      rent = resultSet.getFloat("rent");
+
+      statement.close();
+    } catch (Exception e) {
+      LOGGER.error("Error getting book rent.", e);
+    } finally {
+      DatabaseUtil.getInstance().closeConnection(connection);
+    }
+
+    return rent;
   }
 }

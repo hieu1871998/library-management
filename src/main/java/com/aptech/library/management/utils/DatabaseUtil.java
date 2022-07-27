@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DatabaseUtil {
   private final static String DRIVER = "com.mysql.cj.jdbc.Driver";
-  private String DbUrl = "jdbc:mysql://localhost:3306/library_management?useSSL=false";
+  private String DbUrl = "jdbc:mysql://localhost:3306/library_management?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
   private String username = "root";
   private String password = "Hieu 18/7/1998";
   private static DatabaseUtil INSTANCE;

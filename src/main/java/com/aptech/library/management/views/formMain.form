@@ -46,7 +46,7 @@
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1366, 768]"/>
+      <Dimension value="[1600, 768]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -69,7 +69,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="mainTabbedPane" alignment="1" max="32767" attributes="0"/>
+          <Component id="mainTabbedPane" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -131,36 +131,27 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="filterYearFieldLabel" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              <Component id="refreshBtn" min="-2" pref="28" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="filterYearField" min="-2" pref="144" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="filterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="importBtn" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="filterYearField" min="-2" pref="144" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="filterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="delBtn" min="-2" pref="28" max="-2" attributes="0"/>
                                   </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="filterPanelLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="bookListPane" max="32767" attributes="0"/>
+                                  <Component id="filterYearFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
+                              <Component id="refreshBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="importBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="filterPanelLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="bookListPane" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="bookDetailPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -187,11 +178,8 @@
                           </Group>
                           <Component id="filterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="refreshBtn" alignment="0" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="filterPanelLabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="filterPanelLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="filterNameFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="filterAuthorFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -200,6 +188,8 @@
                               <Component id="filterNameField" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                           <Component id="importBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="refreshBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="delBtn" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Component id="bookListPane" max="32767" attributes="0"/>
@@ -233,6 +223,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="filterNameFieldFocusLost"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filterNameFieldActionPerformed"/>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="filterNameFieldKeyPressed"/>
               </Events>
@@ -244,6 +235,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="filterAuthorFieldFocusLost"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filterAuthorFieldActionPerformed"/>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="filterAuthorFieldKeyPressed"/>
               </Events>
@@ -290,6 +282,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="filterPublisherFieldFocusLost"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filterPublisherFieldActionPerformed"/>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="filterPublisherFieldKeyPressed"/>
               </Events>
@@ -309,6 +302,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="filterYearFieldFocusLost"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filterYearFieldActionPerformed"/>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="filterYearFieldKeyPressed"/>
               </Events>
@@ -422,10 +416,9 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="mngPaneLabel" min="-2" pref="472" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -452,42 +445,26 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="urlFieldLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="coverContainer" alignment="0" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Component id="fileNameField" min="-2" pref="196" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="chooseFileBtn" min="-2" pref="28" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <Component id="coverUrlField" min="-2" pref="196" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="previewCoverBtn" min="-2" pref="28" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="coverFileFieldLabel" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="urlFieldLabel" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="coverContainer" alignment="0" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="delBtn" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
-                                                      <Component id="clearBtn" alignment="1" min="-2" pref="230" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
+                                          <Component id="fileNameField" min="-2" pref="196" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="chooseFileBtn" min="-2" pref="28" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="coverUrlField" min="-2" pref="196" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="previewCoverBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="coverFileFieldLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="clearBtn" alignment="0" min="-2" pref="230" max="-2" attributes="0"/>
                                   </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="mngPaneLabel" min="-2" pref="472" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -559,16 +536,13 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="rentFieldLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="rentField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="clearBtn" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="rentField" min="-2" pref="28" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="addBtn" linkSize="1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="delBtn" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="clearBtn" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="99" max="32767" attributes="0"/>
+                          <EmptySpace pref="123" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -805,28 +779,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearBtnActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="delBtn">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="1" green="3b" red="d8" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="delIcon" type="code"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Delete"/>
-                    <Property name="borderPainted" type="boolean" value="false"/>
-                    <Property name="focusable" type="boolean" value="false"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delBtnActionPerformed"/>
-                  </Events>
-                </Component>
                 <Component class="javax.swing.JTextField" name="coverUrlField">
                 </Component>
                 <Component class="javax.swing.JLabel" name="urlFieldLabel">
@@ -986,6 +938,28 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filterClearBtnActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="delBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="1" green="3b" red="d8" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="delIcon" type="code"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Delete"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delBtnActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="slipsPane">
@@ -1006,54 +980,70 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="slipsPaneLabel" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="filterStudentIdField" linkSize="2" min="-2" pref="144" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="studentIdFieldLabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="studentNameFieldLabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="filterStudentNameField" min="-2" pref="144" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="slipBookField" linkSize="2" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="slipBookFieldLabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="slipBorrowDateField" linkSize="2" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="slipBorrowDateFieldLabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="slipReturnDateField" linkSize="2" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="slipReturnDateFieldLabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="slipStatusCombobox" linkSize="2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="slipFilterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="slipsPaneLabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="slipStatusComboboxLabel" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="filterStudentIdField" linkSize="2" min="-2" pref="144" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="studentIdFieldLabel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="studentNameFieldLabel" min="-2" max="-2" attributes="0"/>
+                                          <Component id="filterStudentNameField" min="-2" pref="144" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="slipFilterBookField" linkSize="2" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="slipBookFieldLabel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="slipFilterBorrowDateField" linkSize="2" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="slipFilterBorrowDateFieldLabel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="slipFilterReturnDateField" linkSize="2" min="-2" pref="71" max="-2" attributes="0"/>
+                                          <Component id="slipFilterReturnDateFieldLabel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="slipFilterStatusComboboxLabel" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="slipFilterStatusCombobox" linkSize="2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="slipFilterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="slipDetailBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="slipDelBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="slipRefreshBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <Component id="slipScrollPane" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="slipScrollPane" min="-2" pref="1041" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="slipDetailPane" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="35" max="32767" attributes="0"/>
+                      <Component id="slipDetailPane" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1068,23 +1058,28 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="studentIdFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="slipBookFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="slipReturnDateFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="slipStatusComboboxLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="slipBorrowDateFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipFilterReturnDateFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipFilterStatusComboboxLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="slipFilterBorrowDateFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="studentNameFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="filterStudentIdField" linkSize="3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="slipBookField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="slipBorrowDateField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="slipReturnDateField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="slipStatusCombobox" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="filterStudentNameField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="slipFilterClearBtn" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="filterStudentIdField" linkSize="3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="slipFilterBookField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="slipFilterBorrowDateField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="slipFilterReturnDateField" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="slipFilterStatusCombobox" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="filterStudentNameField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="slipRefreshBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="slipFilterClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="slipDelBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="slipDetailBtn" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="slipScrollPane" pref="609" max="32767" attributes="0"/>
+                              <Component id="slipScrollPane" pref="632" max="32767" attributes="0"/>
                           </Group>
                           <Component id="slipDetailPane" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -1111,8 +1106,16 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="filterStudentIdField">
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="filterStudentIdFieldFocusLost"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="filterStudentIdFieldKeyPressed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="slipBookField">
+            <Component class="javax.swing.JTextField" name="slipFilterBookField">
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="slipFilterBookFieldFocusLost"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="slipFilterBookFieldKeyPressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="slipBookFieldLabel">
               <Properties>
@@ -1122,11 +1125,35 @@
                 <Property name="text" type="java.lang.String" value="Book"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="slipBorrowDateField">
+            <Component class="javax.swing.JTextField" name="slipFilterBorrowDateField">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="30" green="31" red="32" type="rgb"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="slipFilterBorrowDateFieldFocusLost"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="slipFilterBorrowDateFieldKeyPressed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="slipReturnDateField">
+            <Component class="javax.swing.JTextField" name="slipFilterReturnDateField">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="30" green="31" red="32" type="rgb"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="slipFilterReturnDateFieldFocusLost"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="slipFilterReturnDateFieldKeyPressed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="slipBorrowDateFieldLabel">
+            <Component class="javax.swing.JLabel" name="slipFilterBorrowDateFieldLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -1134,7 +1161,7 @@
                 <Property name="text" type="java.lang.String" value="Borrow date"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="slipReturnDateFieldLabel">
+            <Component class="javax.swing.JLabel" name="slipFilterReturnDateFieldLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -1142,20 +1169,20 @@
                 <Property name="text" type="java.lang.String" value="Return date"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="slipStatusCombobox">
+            <Component class="javax.swing.JComboBox" name="slipFilterStatusCombobox">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(SlipStatus.names())" type="code"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="slipStatusComboboxActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="slipFilterStatusComboboxActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="slipStatusComboboxLabel">
+            <Component class="javax.swing.JLabel" name="slipFilterStatusComboboxLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -1173,11 +1200,10 @@
                 <Component class="javax.swing.JTable" name="slipTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="8" rowCount="0">
+                      <Table columnCount="7" rowCount="0">
                         <Column editable="false" title="ID" type="java.lang.Long"/>
-                        <Column editable="false" title="Customer" type="java.lang.String"/>
+                        <Column editable="false" title="Student" type="java.lang.String"/>
                         <Column editable="false" title="Book" type="java.lang.String"/>
-                        <Column editable="false" title="Quantity" type="java.lang.Integer"/>
                         <Column editable="false" title="Rent" type="java.lang.String"/>
                         <Column editable="false" title="Borrow date" type="java.lang.String"/>
                         <Column editable="false" title="Return date" type="java.lang.String"/>
@@ -1221,21 +1247,24 @@
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
                       </TableColumnModel>
                     </Property>
+                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="slipTableMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
             <Component class="javax.swing.JTextField" name="filterStudentNameField">
+              <Events>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="filterStudentNameFieldFocusLost"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="filterStudentNameFieldKeyPressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="studentNameFieldLabel">
               <Properties>
@@ -1253,24 +1282,65 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="30" green="31" red="32" type="rgb"/>
                 </Property>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="slipFilterClearBtnActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="slipDetailPane">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="30" green="31" red="32" type="rgb"/>
+                </Property>
+              </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="slipDetailPaneLabel" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="slipIdField" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                               <Component id="slipIdFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <Component id="studentIdField" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="slipStatusCombobox" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="slipStatusComboboxLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="slipBookNameFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="slipBookNameField" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Component id="slipStudentIdFieldLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="studentIdField" min="-2" pref="200" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="slipBorrowDateFieldLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="slipBorrowDateField" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="slipReturnDateField" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="slipReturnDateFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="slipStudentNameFieldLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="studentNameField" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="slipRentFieldLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="slipRentField" min="-2" pref="200" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="slipAddBtn" min="-2" pref="200" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="slipFormClearBtn" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1279,14 +1349,57 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="slipDetailPaneLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="slipIdFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="slipIdFieldLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="slipIdField" min="-2" pref="28" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="slipStatusComboboxLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="slipStatusCombobox" min="-2" pref="28" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="slipStudentNameFieldLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="studentNameField" min="-2" pref="28" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="slipStudentIdFieldLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="studentIdField" min="-2" pref="28" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="slipIdField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="studentIdField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="slipBookNameFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="slipRentFieldLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="slipBookNameField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="slipRentField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="slipReturnDateFieldLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="slipBorrowDateField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="slipReturnDateField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="slipBorrowDateFieldLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="slipAddBtn" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="slipFormClearBtn" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -1299,7 +1412,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Add borrowing slip"/>
+                    <Property name="text" type="java.lang.String" value="New borrowing slip"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="slipIdFieldLabel">
@@ -1314,10 +1427,32 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="slipIdField">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
+                    <Property name="focusable" type="boolean" value="false"/>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="studentIdField">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="studentIdFieldFocusLost"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="studentIdFieldKeyPressed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="slipStudentIdFieldLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -1328,8 +1463,236 @@
                     <Property name="text" type="java.lang.String" value="Student ID"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="slipStudentNameFieldLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Student name"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="slipBookNameFieldLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Book name"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="studentNameField">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="studentNameFieldFocusLost"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="studentNameFieldKeyPressed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="slipBookNameField">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="slipBookNameFieldKeyPressed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="slipBorrowDateFieldLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Borrow date"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="slipReturnDateFieldLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Return date"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="slipStatusCombobox">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(SlipStatus.names())" type="code"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="slipStatusComboboxLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Status"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="slipRentFieldLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Rent"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="slipRentField">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="30" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
+                    <Property name="focusable" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="slipBorrowDateField">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3a" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                      <Format subtype="1" type="1"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JFormattedTextField" name="slipReturnDateField">
+                  <Properties>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3a" green="31" red="32" type="rgb"/>
+                    </Property>
+                    <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                      <Format subtype="1" type="1"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="slipAddBtn">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="d4" green="78" red="0" type="rgb"/>
+                    </Property>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Add"/>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="focusable" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="slipAddBtnActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JButton" name="slipFormClearBtn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Clear"/>
+                    <Property name="focusable" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="slipFormClearBtnActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="slipRefreshBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="d4" green="78" red="0" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Refresh"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="slipRefreshBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="slipDelBtn">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="1" green="3b" red="d8" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="Delete"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="slipDelBtnActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="slipDetailBtn">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="30" green="31" red="32" type="rgb"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="View slip detail"/>
+                <Property name="focusable" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="slipDetailBtnActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

@@ -11,7 +11,7 @@ public class dialogLogin extends JDialog {
   private javax.swing.JLabel panelLabel;
   private javax.swing.JPasswordField passwordField;
   private javax.swing.JLabel passwordLabel;
-  private javax.swing.JButton resetBtn;
+  private javax.swing.JButton exitBtn;
   private javax.swing.JTextField usernameField;
   private javax.swing.JLabel usernameLabel;
 
@@ -28,7 +28,7 @@ public class dialogLogin extends JDialog {
     usernameLabel = new javax.swing.JLabel();
     passwordLabel = new javax.swing.JLabel();
     loginBtn = new javax.swing.JButton();
-    resetBtn = new javax.swing.JButton();
+    exitBtn = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
     setBackground(new java.awt.Color(255, 255, 255));
@@ -82,12 +82,17 @@ public class dialogLogin extends JDialog {
       }
     });
 
-    resetBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-    resetBtn.setForeground(new java.awt.Color(50, 49, 48));
-    resetBtn.setText("Signup");
-    resetBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(50, 49, 48)));
-    resetBtn.setFocusPainted(false);
-    resetBtn.setOpaque(true);
+    exitBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+    exitBtn.setForeground(new java.awt.Color(50, 49, 48));
+    exitBtn.setText("Exit");
+    exitBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(50, 49, 48)));
+    exitBtn.setFocusPainted(false);
+    exitBtn.setOpaque(true);
+    exitBtn.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        exitBtnActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -108,7 +113,7 @@ public class dialogLogin extends JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(resetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
+                .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
                     javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80,
@@ -132,12 +137,12 @@ public class dialogLogin extends JDialog {
                         javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(resetBtn)
+                    .addComponent(exitBtn)
                     .addComponent(loginBtn))
                 .addContainerGap(63, Short.MAX_VALUE)));
 
     layout.linkSize(javax.swing.SwingConstants.VERTICAL,
-        new java.awt.Component[] { loginBtn, resetBtn, usernameField });
+        new java.awt.Component[] { loginBtn, exitBtn, usernameField });
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
@@ -164,6 +169,10 @@ public class dialogLogin extends JDialog {
   private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_loginBtnActionPerformed
     formSubmit();
   }// GEN-LAST:event_loginBtnActionPerformed
+
+  private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {
+    System.exit(0);
+  }
 
   private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_passwordFieldActionPerformed
     formSubmit();

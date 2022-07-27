@@ -14,6 +14,10 @@ public class Book {
   private float price;
   private float rent;
 
+  public Book() {
+
+  }
+
   public Book(long id, String name, String author, int categoryId, String publisher, LocalDate publishedYear,
       String cover,
       int quantity,
