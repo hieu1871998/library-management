@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin` (
-  `MaAdmin` int NOT NULL AUTO_INCREMENT,
-  `UserName` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `PassWord` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `TenAdmin` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  `ChucVu` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY (`MaAdmin`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `role` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -135,6 +135,32 @@ LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` VALUES (9,'Art'),(5,'Biography'),(1,'Business'),(3,'Children'),(2,'Dictionary'),(6,'Education'),(16,'Fantasy'),(4,'Fiction'),(12,'Graphic novel'),(7,'Health'),(10,'History'),(13,'Romance'),(8,'Science'),(15,'Science fiction'),(14,'Sport'),(11,'Technology'),(17,'Unknown');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `nhaxuatban`
+--
+
+DROP TABLE IF EXISTS `nhaxuatban`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `nhaxuatban` (
+  `MaNhaXuatBan` int NOT NULL AUTO_INCREMENT,
+  `TenNhaXuatBan` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `DiaChiNhaXuatBan` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  `SdtNhaXuatBan` char(12) NOT NULL,
+  `EmailNhaXuatBan` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`MaNhaXuatBan`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `nhaxuatban`
+--
+
+LOCK TABLES `nhaxuatban` WRITE;
+/*!40000 ALTER TABLE `nhaxuatban` DISABLE KEYS */;
+/*!40000 ALTER TABLE `nhaxuatban` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -286,4 +312,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-26 16:44:52
+-- Dump completed on 2022-07-28 18:00:50
