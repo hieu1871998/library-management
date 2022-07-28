@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
@@ -60,12 +61,6 @@ public class formMain extends javax.swing.JFrame {
    * Creates new form formMain
    */
   public formMain() {
-    if (LoginService.getInstance().getAdmin() == null) {
-      JDialog dbConfigDialog = new dialogDb(this);
-      dbConfigDialog.setVisible(true);
-      JDialog loginDialog = new dialogLogin(this);
-      loginDialog.setVisible(true);
-    }
 
     initComponents();
     prepareIcons();
@@ -2326,7 +2321,14 @@ public class formMain extends javax.swing.JFrame {
     /* Create and display the form */
     java.awt.EventQueue.invokeLater(new Runnable() {
       public void run() {
-        new formMain().setVisible(true);
+        JFrame mainFrame = new formMain();
+        mainFrame.setVisible(true);
+        if (LoginService.getInstance().getAdmin() == null) {
+          JDialog dbConfigDialog = new dialogDb(mainFrame);
+          dbConfigDialog.setVisible(true);
+          JDialog loginDialog = new dialogLogin(mainFrame);
+          loginDialog.setVisible(true);
+        }
       }
     });
   }
