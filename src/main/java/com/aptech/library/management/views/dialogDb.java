@@ -39,6 +39,7 @@ public class dialogDb extends JDialog {
 
   public dialogDb(JFrame parent) {
     super(parent, "Database configuration", true);
+    setLocationRelativeTo(parent);
     prepareIcons();
     initComponents();
     loadSettings();

@@ -4,6 +4,12 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import org.kordamp.ikonli.fluentui.FluentUiRegularAL;
+import org.kordamp.ikonli.fluentui.FluentUiRegularMZ;
+import org.kordamp.ikonli.swing.FontIcon;
+
+import java.awt.Color;
+
 import com.aptech.library.management.services.LoginService;
 
 public class dialogLogin extends JDialog {
@@ -15,9 +21,19 @@ public class dialogLogin extends JDialog {
   private javax.swing.JTextField usernameField;
   private javax.swing.JLabel usernameLabel;
 
+  private FontIcon submitIcon;
+  private FontIcon exitIcon;
+
   public dialogLogin(JFrame parent) {
     super(parent, "Login", true);
+    setLocationRelativeTo(parent);
+    prepareIcons();
     initComponents();
+  }
+
+  private void prepareIcons() {
+    submitIcon = FontIcon.of(FluentUiRegularAL.ARROW_RIGHT_CIRCLE_24, 16, Color.white);
+    exitIcon = FontIcon.of(FluentUiRegularMZ.SIGN_OUT_20, 16, new Color(50, 49, 48));
   }
 
   private void initComponents() {
@@ -32,6 +48,7 @@ public class dialogLogin extends JDialog {
 
     setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
     setBackground(new java.awt.Color(255, 255, 255));
+    getContentPane().setBackground(new Color(255, 255, 255));
 
     panelLabel.setBackground(new java.awt.Color(255, 255, 255));
     panelLabel.setFont(new java.awt.Font("Segoe UI Medium", 1, 24)); // NOI18N
@@ -73,6 +90,7 @@ public class dialogLogin extends JDialog {
     loginBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
     loginBtn.setForeground(new java.awt.Color(255, 255, 255));
     loginBtn.setText("Login");
+    loginBtn.setIcon(submitIcon);
     loginBtn.setBorder(null);
     loginBtn.setFocusPainted(false);
     loginBtn.setOpaque(true);
@@ -85,6 +103,7 @@ public class dialogLogin extends JDialog {
     exitBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
     exitBtn.setForeground(new java.awt.Color(50, 49, 48));
     exitBtn.setText("Exit");
+    exitBtn.setIcon(exitIcon);
     exitBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(50, 49, 48)));
     exitBtn.setFocusPainted(false);
     exitBtn.setOpaque(true);

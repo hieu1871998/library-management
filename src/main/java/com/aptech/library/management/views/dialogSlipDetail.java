@@ -54,6 +54,7 @@ public class dialogSlipDetail extends JDialog {
 
   public dialogSlipDetail(JFrame parent, BorrowingSlip slip) {
     super(parent, "Borrowing slip detail", true);
+    setLocationRelativeTo(parent);
     initComponents();
     loadData(slip);
   }
